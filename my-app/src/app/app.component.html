@@ -1,0 +1,46 @@
+<div>
+  <style type="text/css">
+    .group-button{
+      margin: 0 auto;
+      text-align: center;
+    }
+    .group-button > button{
+      margin: 0 8px;
+    }
+    h1, h3{
+          text-align: center;
+    }
+    .col-form-label[for="example-time-input"]{
+      text-align: center;
+    display: block;
+    font-size: 27px;
+    text-transform: uppercase;
+    font-weight: 600;
+    }
+  </style>
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-3">
+
+            <div class="form-group ">
+                <label for="example-time-input" class=" col-form-label">Timer</label>
+                <div >
+                  <input class="form-control" type="time" [(ngModel)]="viewTimer"  step="1" [readonly]="isReadInput ">
+                </div>
+              </div>
+            
+          <div class="group-button">
+            <button type="button" class=" " [className]="isStart == 1 ? 'btn  btn-outline-success' : ' btn  btn-outline-danger'" (click)="fStartStop()">{{isStart == 1 ? 'Start' : 'Stop'}}</button>
+            <button type="button" class="btn btn-outline-primary" (click)="fWait()">Wait</button>
+            <button type="button" class="btn btn-outline-secondary" (click)="fReset()">Reset</button>
+          </div>
+
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+  </div>
+
+
+
+</div>
