@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
 
   public ngOnInit() : void{
 
-      
+    
   }
 
   fStartStop() : void{
@@ -52,18 +52,15 @@ export class AppComponent implements OnInit {
       this.numbers = interval(1000);
       this.subscribe = this.numbers.subscribe((x) => {
 
-        console.log(getTime);
-
         getTime = getTime - 1000 ; 
         
-        var date = new Date(getTime );
-        var hours = Math.floor((date % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-         hours = hours < 10 ? '0'+hours : hours;
-        var minutes = Math.floor((date % (1000 * 60 * 60)) / (1000 * 60));
-         minutes = minutes < 10 ? '0'+minutes : minutes;
-        var seconds = Math.floor((date % (1000 * 60)) / 1000);
-         seconds = seconds < 10 ? '0'+seconds : seconds;
-        this.viewTimer = hours+':'+minutes+':'+seconds;
+        var hours = Math.floor((getTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var hoursNum = hours < 10 ? '0'+hours : hours;
+        var minutes = Math.floor((getTime % (1000 * 60 * 60)) / (1000 * 60));
+        var minutesNum = minutes < 10 ? '0'+minutes : minutes;
+        var seconds = Math.floor((getTime % (1000 * 60)) / 1000);
+        var secondsNum = seconds < 10 ? '0'+seconds : seconds;
+        this.viewTimer = hoursNum+':'+minutesNum+':'+secondsNum;
 
         if(getTime < 1000){
           this.subscribe.unsubscribe();
