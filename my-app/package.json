@@ -22,7 +22,7 @@
     "@angular/router": "~8.2.3",
     "@types/clockpicker": "0.0.1",
     "bootstrap": "^4.3.1",
-    "chart.js": "^2.8.0",
+    "chart.js": "^2.9.4",
     "clockpicker": "0.0.7",
     "jquery": "^3.4.1",
     "primeicons": "^2.0.0",
